@@ -1,0 +1,8 @@
+<h1> all titles </h1>
+{% for i in course %}
+<span> <a href={{ url_for('file',file_id=i[0]) }}>{{ i[1] }} </a> </span>
+<br>
+{% endfor %}
+{% for i in course.tags %}
+tags: {{ i }}
+{% endfor %}
