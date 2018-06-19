@@ -1,0 +1,1 @@
+docker container run --name mysql --rm -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -itd -v /localhost/mysqldb_path:/var/lib/mysql mysql:5.7

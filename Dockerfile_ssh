@@ -1,0 +1,12 @@
+# 指定基础镜像
+FROM ubuntu:14.04
+
+# 安装软件
+RUN apt-get update && apt-get install -y openssh-server && mkdir /var/run/sshd
+
+# 添加用户及设定密码
+RUN useradd -g root -G sudo testuser && echo "testuser:123456" | chpasswd testuser
+
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
