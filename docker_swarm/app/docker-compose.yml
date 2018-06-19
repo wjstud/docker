@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:3.2
+  web:
+    image: app_web:latest
+    depends_on:
+    - redis
+    ports:
+    - 8001:80/tcp
+    volumes:
+    - ~/Desktop/docker/docker_swarm/app/web:/web:rw
+version: '3.0'
